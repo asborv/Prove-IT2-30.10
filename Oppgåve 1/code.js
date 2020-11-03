@@ -32,9 +32,26 @@ function regisrerSmitte(e) {
 }
 
 function oppdaterTotal() {
+    /**
+    * docstring
+    * -> Reknar ut det totale smittetalet.
+    * -> Viser det totale smittetalet.
+    
+    * -> Base variables:
+    * -> 	name (total): Det totale smittetalet
+    
+    * -> Returns:
+    * -> 	null
+    */
+    
 
+    // Summerer smitta for alle dagar
     const total = smitteArr.reduce((a, b) => a + b);
+
+    // Viser totalt smitta
     smitteTotalTekst.innerHTML = `Smitta totalt: ${total}`;
+
+    return;
 }
 
 function oppdaterSmitteListe(e) {
