@@ -77,7 +77,7 @@ function oppdaterSmitteListe(e) {
     * -> Viser dagens smittetal i liste.
     
     * -> Args:
-    * -> 	e (event): description
+    * -> 	e (event):
     
     * -> Base variables:
     * -> 	dagensSmittetal (number): Talet for smitta i dag som brukaren skriv inn.
@@ -160,6 +160,22 @@ function vurderSmitte() {
 }
 
 function setStatusStil(e, status = vurderSmitte()) {
+    /**
+    * docstring
+    * -> Endrar stilen på nettsida basert på status.
+    
+    * -> Args:
+    * -> 	e (event): 
+    * ->    status (str): Skildrar éin av fire statusar.
+    * ->                  Default: vurderSmitte()
+    
+    * -> Base variables:
+    * -> 	beskjed (str): Beskjeden som skal visast til brukaren.
+    
+    * -> Returns:
+    * -> 	undefined
+    */
+    
     
     // Definerer variablar til å endrast
     let beskjed = "";
@@ -188,7 +204,6 @@ function setStatusStil(e, status = vurderSmitte()) {
             bakgrunnsFarge = "yellow";
             tekstFarge = "black"
             break;
-
     }
 
     // Endre stil
