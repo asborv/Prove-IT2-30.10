@@ -17,6 +17,21 @@ const smitteArr = [];
 // category funksjonar
 
 function regisrerSmitte(e) {
+    /**
+    * docstring
+    * -> Tek smittetalet som brukaren skriv inn.
+    * -> Legg talet til smitteArr
+    
+    * -> Args:
+    * -> 	e (event)
+    
+    * -> Base variables:
+    * -> 	dagensSmitteTall (number): Talet for smitta i dag som brukaren skriv inn.
+    
+    * -> Returns:
+    * -> 	dagensSmitteTall 
+    */
+    
    
     const dagensSmitteTall = Number(smittetallInput.value); // todo fiks for når value = e osv
 
