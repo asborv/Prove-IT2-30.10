@@ -16,6 +16,30 @@ const smitteArr = [];
 
 // category funksjonar
 
+function validerInput(inputElement = smittetallInput) {
+    /**
+    * docstring
+    * -> Validerer input i smittetallInput.
+    * -> Stopper koden frå å registrere smittetal og viser brukar feil dersom ugyldig input.
+    * -> Elles køyrer koden normalt.
+
+    * -> Args:
+    * ->    inputElement (HTML-element): HTML-elementet som skal validerast.
+    * ->                                 Default: smittetalInput
+
+    * -> Returns:
+    * -> 	undefined
+    */
+    
+    // Stoppar koden dersom input er ugyldig. Gjev beskjed ved automatisk HTML-validering.
+    // link https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity
+    if (!inputElement.reportValidity()) {
+        throw new Error("Ugyldig input. Error er ikkje alvorleg, men stoppar koden. Skriv noko gyldig.");
+    }
+
+    return;
+}
+
 function regisrerSmitte(e) {
     /**
     * docstring
@@ -75,6 +99,7 @@ function oppdaterSmitteListe(e) {
     * -> Finn smittetalet i dag.
     * -> Oppdaterer det totale smittetalet (visuelt).
     * -> Viser dagens smittetal i liste.
+    * -> Oppdaterer stil på nettsida basert på tal siste 3 dagar.
     
     * -> Args:
     * -> 	e (event):
@@ -86,15 +111,20 @@ function oppdaterSmitteListe(e) {
     * -> 	undefined
     */
     
-
+    // Validerer input, stoppar om ugyldig
+    validerInput();
+    
     // Set dagens smittetal og ordnar med smitteArr
     const dagensSmitteTall = regisrerSmitte();
 
     // Oppdaterer total
-    oppdaterTotal()
+    oppdaterTotal();
     
     // Legg til dagens smitte i lista på nettsida
     smitteListe.innerHTML += `<li>${dagensSmitteTall}</li>`;
+
+    // Oppdaterer stil på nettsida
+    setStatusStil();
 
     return;
 }
@@ -220,4 +250,3 @@ function setStatusStil(e, status = vurderSmitte()) {
 // category event listeners
 
 registrerSmitteKnapp.addEventListener("click", oppdaterSmitteListe);
-registrerSmitteKnapp.addEventListener("click", setStatusStil);
