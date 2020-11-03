@@ -170,7 +170,9 @@ function setStatusStil(e, status = vurderSmitte()) {
     * ->                  Default: vurderSmitte()
     
     * -> Base variables:
-    * -> 	beskjed (str): Beskjeden som skal visast til brukaren.
+    * -> 	beskjed (str): Beskjeden som skal visast til brukaren basert på status.
+    * ->    bakgrunnsFarge (str): Bakgrunnsfargen nettsida skal ha basert på status.
+    * ->    tekstFarge (str): Farge på tekst basert på status.
     
     * -> Returns:
     * -> 	undefined
@@ -219,7 +221,7 @@ function setStatusStil(e, status = vurderSmitte()) {
 // category event listeners
 
 registrerSmitteKnapp.addEventListener("click", oppdaterSmitteListe);
-registrerSmitteKnapp.addEventListener("click", setStatusStil); //! fjern
+registrerSmitteKnapp.addEventListener("click", setStatusStil);
 
 
 
