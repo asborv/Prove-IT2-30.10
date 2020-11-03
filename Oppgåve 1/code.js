@@ -56,7 +56,7 @@ function oppdaterTotal() {
     * -> 	name (total): Det totale smittetalet
     
     * -> Returns:
-    * -> 	null
+    * -> 	undefined
     */
     
 
