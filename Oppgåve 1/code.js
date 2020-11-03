@@ -133,13 +133,12 @@ function vurderSmitte() {
     const aktuellSmitte = smitteArr.slice(smitteArr.length - 3, smitteArr.length);
 
     
-    // Sorterte arrays i stigande og synkande rekkjefølge
+    // Sorterte arrays i stigande og synkande rekkjefølge.
+    // * Merk funksjonen i .sort() for å sortere etter tal, ikkje teikn
     // link https://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array
     // link https://www.javatpoint.com/javascript-array-reverse-method
-    const stigandeSmitteArr = [...aktuellSmitte].sort();
-    // ! Her skjer det noko merkeleg med tosifra tal som eg ikkje klarer å debugge.
-    // ! Type er number. Ser ut til å berre sortere fyrste siffer.
-    const synkandeSmitteArr = [...aktuellSmitte].sort().reverse();
+    const stigandeSmitteArr = [...aktuellSmitte].sort((a, b) => a - b);
+    const synkandeSmitteArr = [...aktuellSmitte].sort((a, b) => a - b).reverse();
     
     // Dersom den originale smitten er lik den sorterte smitten, er smitten stigande eller synkande
     // link https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
