@@ -222,7 +222,3 @@ function setStatusStil(e, status = vurderSmitte()) {
 
 registrerSmitteKnapp.addEventListener("click", oppdaterSmitteListe);
 registrerSmitteKnapp.addEventListener("click", setStatusStil);
-
-
-
-// category debugging
