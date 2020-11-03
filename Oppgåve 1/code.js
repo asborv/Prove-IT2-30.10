@@ -245,8 +245,35 @@ function setStatusStil(e, status = vurderSmitte()) {
     return;
 }
 
+function sendInputmedTastatur(e, maalTast = "Enter", maalFunksjon = oppdaterSmitteListe) {
+    /**
+    * docstring
+    * -> Sjekker om tasten som vert trykt er den same som maalTast.
+    * -> Om den er, køyrer maalFunksjon.
+    * -> Elles, returnerer meir utan annan handling.
+    * -> Relevant for keydown- og keyup-hendingar.
+    
+    * -> Args:
+    * -> 	e (event)
+    * -> 	maalTast (str): Tasten som skal trykkjast ned for at maalFunksjon skal køyre.
+    * ->                    Default: "Enter"
+    * -> 	maalFunksjon (function): Funksjonen som skal trykkjast dersom tast trykt stemmer med maalTast.
+    * ->                             Default: oppdaterSmitteListe
+    
+    * -> Returns:
+    * -> 	undefined
+    */
+    
+    // Køyrer maalFunksjon dersom tasten som vert trykt er lik maalTast
+    // link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND
+    e.key === maalTast && maalFunksjon();
+
+    return;
+}
+
 
 
 // category event listeners
 
 registrerSmitteKnapp.addEventListener("click", oppdaterSmitteListe);
+smittetallInput.addEventListener("keydown", sendInputmedTastatur);
