@@ -130,21 +130,21 @@ function vurderSmitte() {
     
     // Smitte i aktuelt tidsrom (siste 3)
     // link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-    const aktuelSmitte = smitteArr.slice(smitteArr.length - 3, smitteArr.length);
+    const aktuellSmitte = smitteArr.slice(smitteArr.length - 3, smitteArr.length);
 
     
     // Sorterte arrays i stigande og synkande rekkjefølge
     // link https://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array
     // link https://www.javatpoint.com/javascript-array-reverse-method
-    const stigandeSmitteArr = [...aktuelSmitte].sort();
+    const stigandeSmitteArr = [...aktuellSmitte].sort();
     // ! Her skjer det noko merkeleg med tosifra tal som eg ikkje klarer å debugge.
     // ! Type er number. Ser ut til å berre sortere fyrste siffer.
-    const synkandeSmitteArr = [...aktuelSmitte].sort().reverse();
+    const synkandeSmitteArr = [...aktuellSmitte].sort().reverse();
     
     // Dersom den originale smitten er lik den sorterte smitten, er smitten stigande eller synkande
     // link https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
 
-    switch (JSON.stringify(aktuelSmitte)) {
+    switch (JSON.stringify(aktuellSmitte)) {
         case JSON.stringify(stigandeSmitteArr):
             smitteStatus = "stigende"
             break;
