@@ -70,6 +70,22 @@ function oppdaterTotal() {
 }
 
 function oppdaterSmitteListe(e) {
+    /**
+    * docstring
+    * -> Finn smittetalet i dag.
+    * -> Oppdaterer det totale smittetalet (visuelt).
+    * -> Viser dagens smittetal i liste.
+    
+    * -> Args:
+    * -> 	e (event): description
+    
+    * -> Base variables:
+    * -> 	dagensSmittetal (number): Talet for smitta i dag som brukaren skriv inn.
+    
+    * -> Returns:
+    * -> 	undefined
+    */
+    
 
     // Set dagens smittetal og ordnar med smitteArr
     const dagensSmitteTall = regisrerSmitte();
