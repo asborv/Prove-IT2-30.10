@@ -8,10 +8,9 @@ const konkurrentTotalTekst = document.getElementById("konkurrentTotalTekst");
 
 // category variablar
 
-//* Det same gjeld her som i oppgåve 1. Det verkar som sort berre tek føre seg det fyrste teiknet.
-//* Dvs at 90 > 899
-const lokalPrisArr = lagPrisArray().sort();
-const konkurrentPrisArr = lagPrisArray().sort();
+// Sortering av array på same måte som i oppgåve 1, MDN-referanse der
+const lokalPrisArr = lagPrisArray().sort((a, b) => a - b);
+const konkurrentPrisArr = lagPrisArray().sort((a, b) => a - b);
 
 
 // category funksjonar
