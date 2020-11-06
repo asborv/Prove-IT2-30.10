@@ -39,6 +39,7 @@ function sammenlignPriser(lokal = lokalPrisArr, konkurrent = konkurrentPrisArr) 
         return pris < konkurrent[prisIndex];       
     });
 
+    // Finn andel der den lokale er billigare ved å dividere talet billigare på totalt tal prisar
     const andelLokalBilligere = lokalBilligere.length / lokal.length;
 
     return andelLokalBilligere;
@@ -46,8 +47,8 @@ function sammenlignPriser(lokal = lokalPrisArr, konkurrent = konkurrentPrisArr) 
 
 function visPrisStatus(andelLokalBilligere = sammenlignPriser()) {
     prisStatusOverskrift.innerHTML = andelLokalBilligere < 0.6
-    ? "Sett prisane ned meir"
-    : "Bra jobba.";
+        ? "Sett prisane ned meir."
+        : "Bra jobba.";
     prisStatusOverskrift.innerHTML += ` ${andelLokalBilligere * 100}% av prisane våre er lågare.`;
 
     return;
@@ -66,6 +67,6 @@ function visTotal(eierArr, element, eiernavn = "Ein ukjend aktør sin") {
 
 // category Køyr program
 
-visPrisStatus()
+visPrisStatus();
 visTotal(lokalPrisArr, lokalTotalTekst, "Vår");
 visTotal(lokalPrisArr, konkurrentTotalTekst, "Konkurrenten sin");
