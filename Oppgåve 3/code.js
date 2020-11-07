@@ -44,7 +44,9 @@ function angrip(e) {
             utsagnArr[2] = velgTilfeldigFraArr(landGrunnArr);
             break;
         default:
-            throw Error("What's this?? I can't insult this target!");
+            const problem = "What's this?? I can't insult this target!";
+            utsagnOverskrift.innerHTML = problem;
+            throw new Error(problem);
     }
 
     
