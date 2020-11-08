@@ -164,14 +164,12 @@ function vurderSmitte() {
 
     
     // Sorterte arrays i stigande og synkande rekkjefølge.
-    // * Merk funksjonen i .sort() for å sortere etter tal, ikkje teikn
     // link https://stackoverflow.com/questions/9592740/how-can-you-sort-an-array-without-mutating-the-original-array
-    // link https://www.javatpoint.com/javascript-array-reverse-method
     const stigandeSmitteArr = [...aktuellSmitte].sort((a, b) => a - b);
     const synkandeSmitteArr = [...aktuellSmitte].sort((a, b) => b - a);
+
     // Dersom den originale smitten er lik den sorterte smitten, er smitten stigande eller synkande
     // link https://stackoverflow.com/questions/7837456/how-to-compare-arrays-in-javascript
-
     switch (JSON.stringify(aktuellSmitte)) {
         case JSON.stringify(stigandeSmitteArr):
             smitteStatus = "stigende"
