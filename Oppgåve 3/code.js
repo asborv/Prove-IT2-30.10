@@ -8,6 +8,8 @@ const utsagnOverskrift = document.getElementById("utsagnOverskrift");
 
 // category variablar
 
+// *.map-metodane ordnar teiknsetjing
+
 // Personar å angripe
 const personArr = [
     {navn: "Hillary", kjonn: "f"},
