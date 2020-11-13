@@ -9,20 +9,54 @@ const utsagnOverskrift = document.getElementById("utsagnOverskrift");
 // category variablar
 
 // Personar å angripe
-const personArr = ["Hillary", "Obama"];
+const personArr = [
+    {navn: "Hillary", kjonn: "f"},
+    {navn: "Obama", kjonn: "m"},
+    {navn: "Xi Jinping", kjonn: "m"},
+    {navn: "Bent Høie", kjonn: "m"},
+    {navn: "Elon Musk", kjonn: "m"},
+    {navn: "Tim Apple", kjonn: "m"},
+    {navn: "Sleepy Joe", kjonn: "m"},
+];
 
 // Grunnar til å angripe ein person
-const personGrunnArr = ["(s)he wears glasses.", "(s)he uses light mode."];
+const personGrunnArr = [
+    "uses light mode",
+    "looks like Winnie the Pooh",
+    "spreads fake news",
+    "makes Thunberg seem nice",
+    "shold be deported",
+]
+.map(tekst => `${tekst}.`);
 
 // Land å angripe
-const landArr = ["Mexico", "China", "Russia"];
+const landArr = [
+    "Mexico",
+    "China",
+    "Russia",
+    "Sweden",
+    "North Korea",
+    "Brazil"
+];
 
 // Grunnar til å angripe eit land
-const landGrunnArr = ["they are poorer than us.", "they aren't American."];
+const landGrunnArr = [
+    "They are poor",
+    "They aren't American",
+    "Trump Tower ain't there",
+    "They are asking to be annexed"
+]
+.map(tekst => `${tekst}.`);
 
 // Påstandar om Twitter-offer
 // *Merk at påstandane brukast mot både personar og land
-const paastandArr = ["is stupid!", "makes me sick!"];
+const paastandArr = [
+    "is stupid",
+    "makes me sick",
+    "deprives me of hope for humanity",
+    "is a disgrace",
+]
+.map(tekst => `${tekst}!`);
 
 
 
@@ -87,8 +121,11 @@ function angrip(e) {
     // Brukar målet til å slå fast kva namn og årsak som skal leggjast til den komplette påstanden
     switch (maal) {
         case "person":
-            utsagnArr[0] = velgTilfeldigFraArr(personArr);
-            utsagnArr[2] = velgTilfeldigFraArr(personGrunnArr);
+            // Finn person-objektet å angripe
+            const person = velgTilfeldigFraArr(personArr);
+            utsagnArr[0] = person.navn;
+            utsagnArr[2] = `${person.kjonn === "m" ? "He" : "She"} `;
+            utsagnArr[3] = velgTilfeldigFraArr(personGrunnArr);
             break;
         case "land":
             utsagnArr[0] = velgTilfeldigFraArr(landArr);
